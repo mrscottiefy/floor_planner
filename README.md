@@ -7,6 +7,8 @@ A browser-only floor planner for GitHub Pages. No build, server, account or API 
 1. Upload a PNG, JPG or WebP floor-plan image (up to 25 MB).
 2. Click both ends of a known wall and enter its length in metres.
 3. Choose furniture or service symbols, then click to place them. Drag to move; use the Details panel to resize or rotate.
+   Select any object and toggle **Show text** to hide or show its label, including route measurements. This setting carries through saved projects and PNG/print exports.
+   Choose **Furniture → Custom carpentry** to add a rectangular built-in; set its label, width, depth and rotation in the Details panel.
 4. Draw electrical, water, aircon or lighting routes with clicks. Double-click or press Enter to finish.
 5. Toggle layers, add measurements, and export a high-resolution PNG or use Print / PDF.
 6. Save the editable project as JSON and reopen it later. Work is not automatically saved.
