@@ -39,3 +39,9 @@ All asset paths are relative, so the app works under a GitHub Pages repository p
 - `favicon.svg`: app icon.
 
 No third-party runtime dependencies or external network calls.
+
+## Room labels and dimensions
+
+- Click **Text**, then click the plan to place a room label. Edit its Label, Text size and Rotation in the Details panel. Drag to reposition it. The **Annotations** layer controls all room labels.
+- Set the plan scale, click **Dimension**, then click two endpoints to leave a measured distance on the plan. Optionally give it a name in the Label field. The **Measurements** layer controls dimension lines and labels.
+- Both support duplication, deletion, undo/redo, individual text visibility, project save/open, and PNG/print export. Existing project files remain compatible.
