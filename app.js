@@ -26,7 +26,7 @@ else if(type==='walllight')body=`<path d="M${w*.1} 0H${w*.9}M${w*.5} 0V${h*.2}M$
 else if(type==='bench')body=rect(0,h*.12,w,h*.76,2)+`<path d="M${w*.12} 0v${h*.12}M${w*.88} 0v${h*.12}M${w*.12} ${h*.88}v${h*.12}M${w*.88} ${h*.88}v${h*.12}"/>`;
 else if(type==='chair')body=rect(w*.12,h*.18,w*.76,h*.7,4)+rect(w*.05,0,w*.9,h*.2,2)+`<path d="M${w*.2} ${h*.88}V${h}M${w*.8} ${h*.88}V${h}"/>`;
 else if(type==='stool')body=`<circle cx="${w/2}" cy="${h/2}" r="${Math.min(w,h)*.42}"/><path d="M${w*.15} ${h*.15}l${w*.12} ${h*.12}M${w*.85} ${h*.15}l-${w*.12} ${h*.12}M${w*.15} ${h*.85}l${w*.12} -${h*.12}M${w*.85} ${h*.85}l-${w*.12} -${h*.12}"/>`;
-else if(type==='washer'||type==='dryer')body=rect(0,0,w,h,1)+(showText?`<text x="${w/2}" y="${h/2}" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="${Math.min(w,h)*.52}" font-weight="600" stroke="none" fill="${c}">${type==='washer'?'W':'D'}</text>`:'');
+else if(type==='washer'||type==='dryer')body=rect(0,0,w,h,1)+(`<text x="${w/2}" y="${h/2}" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="${Math.min(w,h)*.52}" font-weight="600" stroke="none" fill="${c}">${type==='washer'?'W':'D'}</text>`);
 else if(type==='steigen')body=rect(0,0,w,h,1)+[.25,.5,.75].map(y=>`<path d="M${w*.12} ${h*y}H${w*.88}"/>`).join('');
 else if(type==='overhead')body=`<rect width="${w}" height="${h}" fill="none" stroke-dasharray="1 5" stroke-linecap="round"/>`;
 else if(type==='door')body=`<path d="M0 0V${h}H${w}" fill="none"/><path d="M0 0A${w} ${h} 0 0 1 ${w} ${h}" fill="none" stroke-dasharray="4 3"/><circle cx="0" cy="${h}" r="2"/>`;
