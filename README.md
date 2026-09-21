@@ -45,3 +45,11 @@ No third-party runtime dependencies or external network calls.
 - Click **Text**, then click the plan to place a room label. Edit its Label, Text size and Rotation in the Details panel. Drag to reposition it. The **Annotations** layer controls all room labels.
 - Set the plan scale, click **Dimension**, then click two endpoints to leave a measured distance on the plan. Optionally give it a name in the Label field. The **Measurements** layer controls dimension lines and labels.
 - Both support duplication, deletion, undo/redo, individual text visibility, project save/open, and PNG/print export. Existing project files remain compatible.
+
+## Kitchen and polygon carpentry
+
+Furniture includes King bed and Bedside table. The Kitchen category contains Oven, Tall unit, Fridge, Kitchen sink and Stove. All preset sizes can be edited.
+
+Choose Furniture → Custom carpentry to draw a polygon. Click corners, then click the first corner, press Enter or use Finish shape. Backspace or Undo corner removes the last corner; Escape cancels. L-shaped and other concave shapes are supported; crossing edges are rejected. Rectangular carpentry remains available as a separate item.
+
+Snapping supports 1, 5 or 10 cm grids and nearby object corners. Hold Shift for horizontal/vertical edges, or Ctrl/Cmd to bypass snapping. Snapping uses the calibrated plan scale, not automatic wall detection in the uploaded image. Live edge lengths appear while drawing. Select finished carpentry and drag its corner handles to reshape it, or drag its body to move it. Polygons support labels, duplication, undo/redo, project files and export.
