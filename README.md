@@ -8,7 +8,7 @@ A browser-only floor planner for GitHub Pages. No build, server, account or API 
 2. Click both ends of a known wall and enter its length in metres.
 3. Choose furniture or service symbols, then click to place them. Drag to move; use the Details panel to resize or rotate.
    Select any object and toggle **Show text** to hide or show its label, including route measurements. This setting carries through saved projects and PNG/print exports.
-   Choose **Furniture → Custom carpentry** to add a rectangular built-in; set its label, width, depth and rotation in the Details panel.
+   Choose **Carpentry → Custom carpentry** to add a rectangular built-in; set its label, width, depth and rotation in the Details panel.
 4. Draw electrical, water, aircon or lighting routes with clicks. Double-click or press Enter to finish.
 5. Toggle layers, add measurements, and export a high-resolution PNG or use Print / PDF.
 6. Save the editable project as JSON and reopen it later. Work is not automatically saved.
@@ -50,6 +50,8 @@ No third-party runtime dependencies or external network calls.
 
 Furniture includes King bed and Bedside table. The Kitchen category contains Oven, Tall unit, Fridge, Kitchen sink and Stove. All preset sizes can be edited.
 
-Choose Furniture → Custom carpentry to draw a polygon. Click corners, then click the first corner, press Enter or use Finish shape. Backspace or Undo corner removes the last corner; Escape cancels. L-shaped and other concave shapes are supported; crossing edges are rejected. Rectangular carpentry remains available as a separate item.
+Choose Carpentry → Custom carpentry to draw a polygon. Click corners, then click the first corner, press Enter or use Finish shape. Backspace or Undo corner removes the last corner; Escape cancels. L-shaped and other concave shapes are supported; crossing edges are rejected. Rectangular carpentry remains available as a separate item.
 
 Snapping supports 1, 5 or 10 cm grids and nearby object corners. Hold Shift for horizontal/vertical edges, or Ctrl/Cmd to bypass snapping. Snapping uses the calibrated plan scale, not automatic wall detection in the uploaded image. Live edge lengths appear while drawing. Select finished carpentry and drag its corner handles to reshape it, or drag its body to move it. Polygons support labels, duplication, undo/redo, project files and export.
+
+Carpentry has its own library category and visibility layer for rectangular and polygon shapes. Older project files move existing carpentry into this layer on opening. Furniture includes a Single door with a hinged-leaf and swing-arc symbol; edit its width, depth (swing footprint), and rotation in Details.
