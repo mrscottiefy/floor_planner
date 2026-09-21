@@ -61,3 +61,7 @@ Carpentry has its own library category and visibility layer for rectangular and 
 Furniture includes Bench, Chair and Stool. TV consoles use a rectangular block with short legs; bedside tables use a small table symbol. Appliances groups washing machines (W), dryers (D), Steigen overhead clothes dryers (rectangle with three horizontal rails), indoor aircon units, compressors and refrigerant routes. Kitchen retains its kitchen appliances. Carpentry includes dotted-outline Overhead storage for cabinets or shelving. All dimensions and rotations are editable, and symbols are included in saved projects and exports. Standard legacy washing-machine, aircon, TV-console and bedside-table items are updated when old projects open.
 
 Choose **Carpentry → Custom overhead** to draw overhead storage or shelving as a polygon, including L-shapes. It uses dotted outlines and the same grid/corner snapping, finish controls and editable corner handles as custom carpentry. Dotted styling is retained in duplicates, saved projects and exports. The rectangular Overhead storage item remains available.
+
+## Windows & Doors
+
+The Windows & Doors library category and layer contain Single door, 2-panel sliding, 3-panel sliding, 2-panel casement and 3-panel casement windows. Sliding symbols show tracks and direction arrows; casement symbols show hinges and opening arcs. Width and depth are editable; for casements, depth represents the swing footprint. Rotate items to align with walls. Existing Furniture doors move into the new layer when saved projects open.
