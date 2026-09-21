@@ -55,3 +55,7 @@ Choose Carpentry → Custom carpentry to draw a polygon. Click corners, then cli
 Snapping supports 1, 5 or 10 cm grids and nearby object corners. Hold Shift for horizontal/vertical edges, or Ctrl/Cmd to bypass snapping. Snapping uses the calibrated plan scale, not automatic wall detection in the uploaded image. Live edge lengths appear while drawing. Select finished carpentry and drag its corner handles to reshape it, or drag its body to move it. Polygons support labels, duplication, undo/redo, project files and export.
 
 Carpentry has its own library category and visibility layer for rectangular and polygon shapes. Older project files move existing carpentry into this layer on opening. Furniture includes a Single door with a hinged-leaf and swing-arc symbol; edit its width, depth (swing footprint), and rotation in Details.
+
+## Furniture and appliance symbols
+
+Furniture includes Bench, Chair and Stool. TV consoles use a rectangular block with short legs; bedside tables use a small table symbol. Appliances groups washing machines (W), dryers (D), Steigen overhead clothes dryers (rectangle with three horizontal rails), indoor aircon units, compressors and refrigerant routes. Kitchen retains its kitchen appliances. Carpentry includes dotted-outline Overhead storage for cabinets or shelving. All dimensions and rotations are editable, and symbols are included in saved projects and exports. Standard legacy washing-machine, aircon, TV-console and bedside-table items are updated when old projects open.
