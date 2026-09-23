@@ -65,3 +65,9 @@ Choose **Carpentry → Custom overhead** to draw overhead storage or shelving as
 ## Windows & Doors
 
 The Windows & Doors library category and layer contain Single door, 2-panel sliding, 3-panel sliding, 2-panel casement and 3-panel casement windows. Sliding symbols show tracks and direction arrows; casement symbols show hinges and opening arcs. Width and depth are editable; for casements, depth represents the swing footprint. Rotate items to align with walls. Existing Furniture doors move into the new layer when saved projects open.
+
+## Walls and room layouts
+
+Walls → Wall polygon draws a solid wall footprint. Walls → Room outline draws a closed perimeter with an open interior and editable Wall thickness (metres). Set scale first, click corners, then Enter or Finish shape. Grid/corner snapping and Shift axis constraints are supported. Select the shape and drag a corner to expand or reshape a room; drag an edge to move the entire outline. Walls render below furnishings and have a separate visibility layer. Saved projects, undo/redo, duplicates and exports preserve walls.
+
+These are editable overlays: existing walls in an uploaded image are not removed, and moving a room outline does not move its furniture. Reduce the floor-plan opacity when comparing a proposed layout.
