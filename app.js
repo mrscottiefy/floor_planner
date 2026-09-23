@@ -111,4 +111,13 @@ function finishPolygon(){if(!validPolygon(points)){status('Use at least three co
 function polygonPreview(){if(mode!=='polygon'||!hover)return '';const ps=[...points,hover],last=points.at(-1);return `<g pointer-events="none"><polyline points="${ps.map(p=>p.x+','+p.y).join(' ')}" fill="#65887918" stroke="#17694d" stroke-width="2" stroke-dasharray="${pending?.[5]?'1 5':'5 4'}" stroke-linecap="round"/><circle cx="${hover.x}" cy="${hover.y}" r="${snapTolerance()/2}" fill="white" stroke="#17694d" stroke-width="2"/>${last?`<text x="${(last.x+hover.x)/2}" y="${(last.y+hover.y)/2-10}" font-size="13" fill="#17694d" stroke="white" stroke-width="3" paint-order="stroke">${(Math.hypot(hover.x-last.x,hover.y-last.y)/state.ppm).toFixed(2)} m</text>`:''}</g>`;}
 $('finish-polygon').onclick=finishPolygon;$('undo-corner').onclick=()=>{points.pop();render();};
 
-state.items=[{id:uid(),label:'Sofa',category:'Furniture',w:2.1,h:.9,type:'sofa',x:480,y:630,angle:0},{id:uid(),label:'Queen bed',category:'Furniture',w:1.52,h:1.9,type:'bed',x:810,y:184,angle:90},{id:uid(),label:'Dining table',category:'Furniture',w:1.4,h:.8,type:'table',x:483,y:360,angle:0}];library();layers();properties();fit();
+state.items=[{id:uid(),label:'Sofa',category:'Furniture',w:2.1,h:.9,type:'sofa',x:480,y:630,angle:0},{id:uid(),label:'Queen bed',category:'Furniture',w:1.52,h:1.9,type:'bed',x:810,y:184,angle:90},{id:uid(),label:'Dining table',category:'Furniture',w:1.4,h:.8,type:'table',x:483,y:360,angle:0}];
+
+// Additional small storage pieces requested for the furniture library.
+catalog.push(['Short open bookshelf','Furniture',1.0,.3,'openshelf'],['Shoe cabinet','Furniture',1.0,.35,'shoecabinet']);
+const symbolBase=symbol;
+symbol=(type,w,h,c,showText=true)=>{let body='';const rect=(x,y,a,b,r=2)=>`<rect x="${x}" y="${y}" width="${a}" height="${b}" rx="${r}"/>`;
+if(type==='openshelf')body=rect(0,0,w,h,1)+[.25,.5,.75].map(y=>`<path d="M0 ${h*y}H${w}"/>`).join('')+`<path d="M${w*.08} 0V${h}M${w*.92} 0V${h}"/>`;
+else if(type==='shoecabinet')body=rect(0,0,w,h,2)+[.2,.5,.8].map(y=>`<path d="M${w*.1} ${h*y}H${w*.9}"/>`).join('')+`<path d="M${w*.46} ${h*.12}h${w*.08}M${w*.46} ${h*.42}h${w*.08}M${w*.46} ${h*.72}h${w*.08}"/>`;
+else {const old=symbolBase(type,w,h,c,showText);return old;}return `<g fill="${c}18" stroke="${c}" stroke-width="1.7" vector-effect="non-scaling-stroke">${body}</g>`;};
+library();layers();properties();fit();
