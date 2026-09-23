@@ -129,4 +129,11 @@ symbol=(type,w,h,c,showText=true)=>{if(type==='babycot')return `<g fill="${c}18"
 catalog.push(['Floor mattress','Furniture',1.4,2.0,'floor-mattress']);
 const symbolBase4=symbol;
 symbol=(type,w,h,c,showText=true)=>{if(type==='floor-mattress')return `<g fill="${c}18" stroke="${c}" stroke-width="1.7" vector-effect="non-scaling-stroke"><rect width="${w}" height="${h}" rx="${Math.min(w,h)*.08}"/><rect x="${w*.1}" y="${h*.08}" width="${w*.8}" height="${h*.2}" rx="${h*.08}" fill="white"/><path d="M${w*.08} ${h*.38}H${w*.92}M${w*.08} ${h*.58}H${w*.92}M${w*.08} ${h*.78}H${w*.92}" stroke-dasharray="3 4"/></g>`;return symbolBase4(type,w,h,c,showText);};
+colors['Pet Areas']='#b26f62';
+state.layers['Pet Areas']??=true;
+const validProjectBase=validProject;
+validProject=s=>{s.layers??={};s.layers['Pet Areas']??=true;return validProjectBase(s);};
+catalog.push(['Fenced dog area','Pet Areas',1.8,1.4,'dogarea']);
+const symbolBase5=symbol;
+symbol=(type,w,h,c,showText=true)=>{if(type==='dogarea')return `<g fill="${c}10" stroke="${c}" stroke-width="2" vector-effect="non-scaling-stroke"><rect x="2" y="2" width="${w-4}" height="${h-4}" rx="4" fill="none" stroke-dasharray="7 5"/><path d="M${w*.18} ${h*.2}V${h*.8}M${w*.36} ${h*.2}V${h*.8}M${w*.54} ${h*.2}V${h*.8}M${w*.72} ${h*.2}V${h*.8}M${w*.18} ${h*.2}H${w*.72}" opacity=".6"/><g transform="translate(${w*.5} ${h*.55})" fill="${c}" stroke="none"><ellipse cx="0" cy="${h*.08}" rx="${w*.11}" ry="${h*.14}"/><ellipse cx="-${w*.13}" cy="-${h*.08}" rx="${w*.055}" ry="${h*.085}"/><ellipse cx="-${w*.035}" cy="-${h*.15}" rx="${w*.055}" ry="${h*.085}"/><ellipse cx="${w*.06}" cy="-${h*.15}" rx="${w*.055}" ry="${h*.085}"/><ellipse cx="${w*.15}" cy="-${h*.08}" rx="${w*.055}" ry="${h*.085}"/></g></g>`;return symbolBase5(type,w,h,c,showText);};
 library();layers();properties();fit();
