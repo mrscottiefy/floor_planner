@@ -126,4 +126,7 @@ symbol=(type,w,h,c,showText=true)=>{if(type==='slidingdoor'){const p=w/2;return 
 catalog.push(['Baby cot','Furniture',1.25,.7,'babycot']);
 const symbolBase3=symbol;
 symbol=(type,w,h,c,showText=true)=>{if(type==='babycot')return `<g fill="${c}18" stroke="${c}" stroke-width="1.7" vector-effect="non-scaling-stroke"><rect width="${w}" height="${h}" rx="3"/><rect x="${w*.1}" y="${h*.14}" width="${w*.8}" height="${h*.72}" rx="5" fill="white"/><path d="M${w*.2} ${h*.1}V${h*.9}M${w*.35} ${h*.1}V${h*.9}M${w*.5} ${h*.1}V${h*.9}M${w*.65} ${h*.1}V${h*.9}M${w*.8} ${h*.1}V${h*.9}"/><circle cx="${w*.1}" cy="${h*.1}" r="3"/><circle cx="${w*.9}" cy="${h*.1}" r="3"/><circle cx="${w*.1}" cy="${h*.9}" r="3"/><circle cx="${w*.9}" cy="${h*.9}" r="3"/></g>`;return symbolBase3(type,w,h,c,showText);};
+catalog.push(['Floor mattress','Furniture',1.4,2.0,'floor-mattress']);
+const symbolBase4=symbol;
+symbol=(type,w,h,c,showText=true)=>{if(type==='floor-mattress')return `<g fill="${c}18" stroke="${c}" stroke-width="1.7" vector-effect="non-scaling-stroke"><rect width="${w}" height="${h}" rx="${Math.min(w,h)*.08}"/><rect x="${w*.1}" y="${h*.08}" width="${w*.8}" height="${h*.2}" rx="${h*.08}" fill="white"/><path d="M${w*.08} ${h*.38}H${w*.92}M${w*.08} ${h*.58}H${w*.92}M${w*.08} ${h*.78}H${w*.92}" stroke-dasharray="3 4"/></g>`;return symbolBase4(type,w,h,c,showText);};
 library();layers();properties();fit();
