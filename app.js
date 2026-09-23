@@ -139,4 +139,6 @@ symbol=(type,w,h,c,showText=true)=>{if(type==='dogarea')return `<g fill="${c}10"
 catalog.push(['1-spot track light','Lighting',.45,.18,'track1'],['2-spot track light','Lighting',.75,.18,'track2'],['3-spot track light','Lighting',1.05,.18,'track3']);
 const symbolBase6=symbol;
 symbol=(type,w,h,c,showText=true)=>{if(/^track[123]$/.test(type)){const n=Number(type.slice(-1)),gap=w/(n+1);return `<g fill="${c}18" stroke="${c}" stroke-width="1.7" vector-effect="non-scaling-stroke"><path d="M${w*.08} ${h*.5}H${w*.92}"/><path d="M${w*.12} ${h*.2}V${h*.8}M${w*.88} ${h*.2}V${h*.8}"/>${Array.from({length:n},(_,i)=>{const x=gap*(i+1);return `<path d="M${x} ${h*.5}V${h*.68}"/><path d="M${x} ${h*.68}l-${w*.06} ${h*.18}h${w*.12}Z"/>`;}).join('')}</g>`;}return symbolBase6(type,w,h,c,showText);};
+const itemSvgBase=itemSvg;
+itemSvg=(item,selection=true)=>{const markup=itemSvgBase(item,selection);if(!selection||selected!==item.id)return markup;return '<style>.selected-item{filter:drop-shadow(0 0 5px #17694d)}</style>'+markup.replace('<g data-id="'+item.id+'"','<g data-id="'+item.id+'" class="selected-item"');};
 library();layers();properties();fit();
