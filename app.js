@@ -143,4 +143,8 @@ const itemSvgBase=itemSvg;
 itemSvg=(item,selection=true)=>{const markup=itemSvgBase(item,selection);if(!selection||selected!==item.id)return markup;return '<style>.selected-item{filter:drop-shadow(0 0 5px #17694d)}</style>'+markup.replace('<g data-id="'+item.id+'"','<g data-id="'+item.id+'" class="selected-item"');};
 const artBase=art;
 art=(selection=true)=>{const base=artBase(selection);if(!state.image||state.calibrated)return base;return base+`<g data-scale-hint="true" pointer-events="none"><rect x="${Math.max(20,state.width*.04)}" y="${Math.max(28,state.height*.06)}" width="${Math.min(390,state.width*.52)}" height="74" rx="10" fill="#17694d" opacity=".96"/><text x="${Math.max(38,state.width*.04+18)}" y="${Math.max(56,state.height*.06+28)}" font-family="Arial" font-size="16" font-weight="700" fill="white">1 · Set your plan scale</text><text x="${Math.max(38,state.width*.04+18)}" y="${Math.max(80,state.height*.06+52)}" font-family="Arial" font-size="12" fill="white">Click both ends of a known wall, then enter its length.</text></g>`;};
+const itemSvgUnselected=itemSvg;
+itemSvg=(item)=>itemSvgUnselected(item,false);
+const propertiesBase=properties;
+properties=()=>{propertiesBase();document.querySelectorAll('[data-catalog]').forEach(button=>{const entry=catalog[Number(button.dataset.catalog)],item=state.items.find(x=>x.id===selected);button.classList.toggle('selected-library-item',!!item&&entry&&entry[4]===item.type&&entry[1]===item.category);});};
 library();layers();properties();fit();
