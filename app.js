@@ -152,4 +152,10 @@ catalog.push(['Four door wardrobe','Furniture',1.8,.6,'wardrobe4'],['Sideboard',
 const symbolBase7=symbol;
 symbol=(type,w,h,c,showText=true)=>{if(type==='wardrobe4')return `<g fill="${c}18" stroke="${c}" stroke-width="1.7" vector-effect="non-scaling-stroke"><rect width="${w}" height="${h}"/><path d="M${w*.25} 0V${h}M${w*.5} 0V${h}M${w*.75} 0V${h}"/><path d="M${w*.2} ${h*.48}v${h*.04}M${w*.45} ${h*.48}v${h*.04}M${w*.7} ${h*.48}v${h*.04}M${w*.95} ${h*.48}v${h*.04}"/></g>`;if(type==='sideboard')return `<g fill="${c}18" stroke="${c}" stroke-width="1.7" vector-effect="non-scaling-stroke"><rect width="${w}" height="${h}" rx="2"/><path d="M${w*.25} 0V${h}M${w*.5} 0V${h}M${w*.75} 0V${h}"/><path d="M${w*.18} ${h*.48}h${w*.08}M${w*.43} ${h*.48}h${w*.08}M${w*.68} ${h*.48}h${w*.08}M${w*.93} ${h*.48}h${w*.04}"/></g>`;return symbolBase7(type,w,h,c,showText);};
 const restoreBase2=restore;restore=()=>{for(const i of state.items)if(i.type==='cabinet'&&i.label==='Wardrobe')i.label='Two door wardrobe';restoreBase2();};
-library();layers();properties();fit();
+// Selection emphasis follows the editing context: floor selections use the original canvas outline;
+// the library only highlights the item currently being placed.
+itemSvg=(item)=>itemSvgBase(item,selected===item.id);
+const syncPlacementLibrary=()=>{const choice=pending;document.querySelectorAll('[data-catalog]').forEach(button=>{const entry=catalog[Number(button.dataset.catalog)];button.classList.toggle('selected-library-item',!!choice&&entry&&entry[0]===choice[0]&&entry[1]===choice[1]);});};
+$('catalog').addEventListener('click',()=>setTimeout(syncPlacementLibrary,0));
+const propertiesForPlacement=properties;properties=()=>{propertiesForPlacement();syncPlacementLibrary();};
+syncPlacementLibrary();library();layers();properties();fit();
